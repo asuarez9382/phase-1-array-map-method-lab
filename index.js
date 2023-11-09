@@ -1,4 +1,4 @@
-const tutorials = [
+let tutorials = [
   'what does the this keyword mean?',
   'What is the Constructor OO pattern?',
   'implementing Blockchain Web API',
@@ -11,6 +11,22 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+function capitalize(element) {
+  let newElement = element.split(" ");
+  let emptySentence = [];
+  let emptyString = [];
+  for(let word of newElement) {
+    let newWord = word[0].toUpperCase() + word.slice(1,word.length);
+    emptyString.push(newWord);
+  }
+  let newString = emptyString.join(" ");
+  emptySentence.push(newString);
+  const result = emptySentence.join(" ")
+  return result;
+  }
+
+
 const titleCased = () => {
-  return tutorials
+  tutorials = tutorials.map(capitalize)
+  return tutorials;
 }
